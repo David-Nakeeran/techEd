@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
