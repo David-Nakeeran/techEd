@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" type="module" defer></script>
     <title>Better News</title>
   </head>
   <body>
@@ -16,26 +17,75 @@
       </nav>
     </header>
     <main>
-      <section class="breaking-news sub-heading">
-        <h2>Breaking News</h2>
-        <img
-          src="https://www.nordicnest.com/assets/blobs/byon-balloon-decoration-17-cm-dusty-red/40333-03-01-c43152de0f.jpg?preset=tiny&dpr=2"
-          alt="image of a red ballon"
-          width="200px"
-        />
-        <p class="para">Man trips over a balloon</p>
+      <div class="wrapper">
+        <div>
+          <section class="breaking-news sub-heading">
+            <h2 class="breaking-news-heading">Breaking News</h2>
+            <img
+              src="https://www.nordicnest.com/assets/blobs/byon-balloon-decoration-17-cm-dusty-red/40333-03-01-c43152de0f.jpg?preset=tiny&dpr=2"
+              alt="image of a red ballon"
+              width="200px"
+            />
+            <p class="para">Man trips over a balloon</p>
+          </section>
+          <section class="breaking-news">
+            <p class="para most-read-para">Most read</p>
+            <ol>
+              <li>Penguin ransacks fish stool at local market.</li>
+              <li>The moon <em>is</em> actually made of cheese.</li>
+              <li>I have no idea.</li>
+              <li>When news isn't news but actually is news.</li>
+              <li>
+                Cats have created their own social media platform called paws4u.
+              </li>
+            </ol>
+          </section>
+          <section class="dummy-news-container breaking-news">
+            <p class="para">Dummy news title</p>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+            </p>
+            <br />
+            <p>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a more-or-less normal
+              distribution of letters, as opposed to using 'Content here,
+              content here', making it look like readable English. Many desktop
+              publishing packages and web page editors now use Lorem Ipsum as
+              their default model text, and a search for 'lorem ipsum' will
+              uncover many web sites still in their infancy. Various versions
+              have evolved over the years, sometimes by accident, sometimes on
+              purpose (injected humour and the like).
+            </p>
+          </section>
+        </div>
+        <div>
+          <p>testing</p>
+          <p>testing</p>
+          <p>testing</p>
+          <p>testing</p>
+        </div>
+      </div>
+      <section class="btn-container">
+        <button class="btn">do not press this button!</button>
       </section>
-      <section class="breaking-news">
-        <p class="para most-read-para">Most read</p>
-        <ol>
-          <li>Penguin ransacks fish stool at local market.</li>
-          <li>The moon <em>is</em> actually made of cheese.</li>
-          <li>I have no idea.</li>
-          <li>When news isn't news but actually is news.</li>
-          <li>
-            Cats have created their own social media platform called paws4u.
-          </li>
-        </ol>
+      <section class="modal-container">
+        <div class="modal">
+          <p>Oh dear, you pressed it didn't you</p>
+          <p>blah blah blah</p>
+          <!-- Will be hidden with js -->
+          <!-- Change to fixed to be extra annoying later.... -->
+        </div>
       </section>
     </main>
     <footer>
