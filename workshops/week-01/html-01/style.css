@@ -13,11 +13,20 @@ body {
 
 header {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   align-items: center;
   justify-content: space-between;
-  margin: 1.5em;
+  margin-bottom: 1.5em;
   padding: 0.75em;
   background-color: #4d4de43f;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 ol {
@@ -59,8 +68,52 @@ h2 {
   width: 300px;
   line-height: 1.5em;
   margin-bottom: 2.5em;
+  padding-top: 4.5em;
 }
 
 .most-read-para {
   margin-bottom: 1.4em;
+}
+
+.modal-container {
+  display: none;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: coral;
+  width: 200px;
+  height: 200px;
+}
+
+.btn-container {
+  text-align: center;
+  margin-bottom: 0.75em;
+}
+
+.btn {
+  background-color: #ee0f0f;
+  padding: 0.75em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.btn:hover {
+  font-size: 1.5rem;
+}
+
+.btn:active {
+  background-color: #e69a9a;
 }
