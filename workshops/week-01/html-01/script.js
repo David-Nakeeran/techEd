@@ -1,36 +1,5 @@
 "use strict";
 
-const calculate = (a, b, operator) => {
-  switch (operator) {
-    case "+":
-      return add(a, b);
-    case "-":
-      return subtract(a, b);
-    case "*":
-      return multiply(a, b);
-    case "/":
-      return divide(a, b);
-  }
-};
-
-const add = (a, b) => {
-  return a + b;
-};
-
-const subtract = (a, b) => {
-  return a - b;
-};
-
-const multiply = (a, b) => {
-  return a * b;
-};
-
-const divide = (a, b) => {
-  return a / b;
-};
-
-console.log(calculate(2, 4, "+"));
-
 // const getUsersName = () => {
 //   let firstName = prompt("What is your name?");
 //   while (!firstName) {
