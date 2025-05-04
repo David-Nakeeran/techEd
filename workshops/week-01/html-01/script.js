@@ -96,14 +96,12 @@
 //   console.log("draw");
 // }
 
-// const btn = document.querySelector(".btn");
-// const modal = document.querySelector(".modal-container");
-//check when button has been clicked, change style
+const btn = document.querySelector("#btn");
+const modal = document.querySelector("#modal-container");
 
-// callback
-// const handleClick = (e) => {
-//   modal.style.display = "block";
-// };
+const handleClick = (e) => {
+  modal.style.display = "block";
+  btn.style.display = "none";
+};
 
-// btn.addEventListener("click", handleClick);
-// btn.style.display = "none";
+btn.addEventListener("click", handleClick);
