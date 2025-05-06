@@ -1,15 +1,48 @@
 "use strict";
 
-const bands = ["Stone Sour", "Shinedown", "Foo Fighters", "Nirvana"];
+// Callbacks
+const onAwesomeSuccess = (data) => {
+  console.log(`It was successful: ${data.message}`);
+};
 
-for (let i = 0; i < bands.length; i++) {
-  console.log(bands[i]);
-}
+const onAwesomeFailure = () => {
+  console.log("It failed :(");
+};
 
-for (let item of bands) {
-  console.log(item);
-}
+// Coordinator
+const myAwesomeFunction = (onSuccessCallback, onFailureCallback) => {
+  console.log("Running myAwesomeFunction... doing complex tasks...");
+  console.log("Complex task complete. I will notify the user");
 
-bands.forEach((item, index) => {
-  console.log(`Band: ${item}, Index: ${index}`);
-});
+  const success = Math.random() > 0.5;
+  if (success) {
+    onSuccessCallback({
+      message: "This is the message of ultimate success",
+    });
+  } else {
+    onFailureCallback();
+  }
+};
+
+myAwesomeFunction(onAwesomeSuccess, onAwesomeFailure);
+
+const add = (a, b) => {
+  return a + b;
+};
+
+const multiply = (a, b) => {
+  return a * b;
+};
+
+const myCalculatorFunction = (a, b, operation) => {
+  console.log(
+    `Magic is about to happen with these two numbers: ${a} and ${b} , are you ready?!`
+  );
+  return operation(a, b);
+};
+
+const result = myCalculatorFunction(3, 5, add);
+console.log(result);
+
+const result2 = myCalculatorFunction(2, 10, multiply);
+console.log(result2);
