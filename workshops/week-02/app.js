@@ -47,21 +47,43 @@
 // const result2 = myCalculatorFunction(2, 10, multiply);
 // console.log(result2);
 
-const person = {
-  firstName: "Bob",
-  surname: "Smith",
-  age: 39,
-  favouriteColour: "Green",
-  pets: ["Cat", "Hamster", "Monkey"],
-  getPersonFullName: function () {
-    return `${this.firstName} ${this.surname}`;
-  },
-  sayHello: function (message) {
-    return `${message} ${this.firstName}`;
-  },
-};
+// const person = {
+//   firstName: "Bob",
+//   surname: "Smith",
+//   age: 39,
+//   favouriteColour: "Green",
+//   pets: ["Cat", "Hamster", "Monkey"],
+//   getPersonFullName: function () {
+//     return `${this.firstName} ${this.surname}`;
+//   },
+//   sayHello: function (message) {
+//     return `${message} ${this.firstName}`;
+//   },
+// };
 
-const fullName = person.getPersonFullName();
-const greeting = person.sayHello("Hey, how's it going ");
+// const fullName = person.getPersonFullName();
+// const greeting = person.sayHello("Hey, how's it going ");
 
-console.log(greeting);
+// console.log(greeting);
+
+// const playBtn = document.querySelector("#play-audio");
+// const pauseBtn = document.querySelector("#pause-audio");
+// const audioEl = document.querySelector("#audio");
+// const slider = document.querySelector("input");
+
+// const handleClick = (e) => {
+//   audioEl.play();
+// };
+
+// const handleChange = (e) => {
+//   audioEl.volume = e.target.value;
+// };
+
+// const handleClickPauseAudio = (e) => {
+//   audioEl.pause();
+// };
+
+// slider.addEventListener("change", handleChange);
+
+// pauseBtn.addEventListener("click", handleClickPauseAudio);
+// playBtn.addEventListener("click", handleClick);
