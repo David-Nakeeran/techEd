@@ -3,3 +3,51 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+header {
+  margin-bottom: 1.5em;
+}
+
+.intro-text {
+  margin-inline: auto;
+  max-width: fit-content;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  background: #eee;
+  gap: 1em;
+}
+
+.box {
+  border: 2px solid goldenrod;
+  border-radius: 1rem;
+  min-height: 10rem;
+  min-width: 10rem;
+}
+
+.box img {
+  display: block;
+  max-width: 100%;
+}
+
+footer {
+  margin-top: auto;
+}
+
+@media (min-width: 800px) {
+  header {
+    border: 2px solid lime;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
