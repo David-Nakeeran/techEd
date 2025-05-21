@@ -7,10 +7,11 @@ dotenv.config();
 
 const app = express();
 
+app.use(cors());
+
 // Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
 
 const db = new Pool({
   connectionString: process.env.DB_CONNECTION_STRING,
@@ -19,12 +20,12 @@ const db = new Pool({
 // Post route
 app.post("/messages", async (req, res, next) => {
   try {
-    const { msg_name, content } = req.body;
+    const { msg_name, content, test } = req.body;
 
-    await db.query(`INSERT INTO messages (msg_name, content) VALUES ($1, $2)`, [
-      msg_name,
-      content,
-    ]);
+    await db.query(
+      `INSERT INTO messages (msg_name, content, test) VALUES ($1, $2, $3)`,
+      [msg_name, content, test]
+    );
 
     res.status(201).json({
       success: true,
@@ -38,11 +39,22 @@ app.post("/messages", async (req, res, next) => {
 // Get route
 app.get("/messages", async (req, res, next) => {
   try {
+    const queryStringMsg = req.query.msg;
+
     const result = await db.query(`SELECT * FROM messages;`);
+
+    let data = result.rows;
+
+    if (queryStringMsg) {
+      data = data.filter((item) => {
+        return item.msg_name.toLowerCase() === queryStringMsg;
+      });
+    }
 
     res.status(200).json({
       success: true,
-      messages: result.rows,
+      messages: data,
+      // messages: result.rows,
     });
   } catch (error) {
     next(error);
@@ -93,3 +105,20 @@ app.use(errorHandler);
 app.listen(8080, () => {
   console.log("Server is listening on port 8080..");
 });
+
+// CREATE TABLE quests (
+//   id bigint generated always as identity primary key,
+//   title TEXT,
+//   description TEXT,
+//   posted_by TEXT,
+//   is_completed BOOLEAN DEFAULT FALSE,
+//   completed_by TEXT,
+//   success_roll INTEGER CHECK (success_roll BETWEEN 1 AND 10),
+//   difficulty TEXT,
+//   created_at TIMESTAMP DEFAULT NOW(),
+// );
+// https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-CHECK-CONSTRAINTS
+
+// https://www.postgresql.org/docs/current/functions-comparison.html#FUNCTIONS-COMPARISON-BETWEEN
+
+// https://www.postgresql.org/docs/current/functions-comparisons.html#FUNCTIONS-COMPARISONS-IN-SCALAR
