@@ -1,13 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <script type="module" src="/src/main.js" defer></script>
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <form>
+      <fieldset>
+        <legend>Enter your message here!</legend>
+        <label for="msg_name">Message</label>
+        <input type="text" name="msg_name" required />
+        <label for="content">Content</label>
+        <input type="text" name="content" required />
+        <label for="test">Test</label>
+        <input type="text" name="test" required />
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
   </body>
 </html>
