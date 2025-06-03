@@ -1,6 +1,20 @@
 import React from "react";
 
-const greeting = () => {
-  console.log("Bonjour!");
+export const Button = ({ decrementCount, incrementCount }) => {
+  return (
+    <>
+      <button
+        onClick={() => incrementCount()}
+        className="font-medium cursor-pointer bg-purple-400 text-purple-950 p-3 rounded-2xl hover:bg-purple-300 "
+      >
+        Increment Count!
+      </button>
+      <button
+        onClick={() => decrementCount()}
+        className="font-medium cursor-pointer bg-purple-400 text-purple-950 p-3 rounded-2xl hover:bg-purple-300 "
+      >
+        Decrement Count!
+      </button>
+    </>
+  );
 };
-export const Button = () => <button onClick={greeting}>Click me!</button>;
