@@ -21,7 +21,7 @@ export const App = () => {
         <WelcomeCard firstName="Jane" title="Lady" />
         <WelcomeCard firstName="Bob" />
         <Button
-          count={count}
+          // count={count}
           incrementCount={() => setCount(count + 1)}
           decrementCount={decrementHandleClick}
         />
