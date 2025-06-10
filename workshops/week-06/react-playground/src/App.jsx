@@ -7,11 +7,14 @@ import { ShowMessageButton } from "./components/ShowMessageButton.jsx";
 import { Message } from "./components/Message.jsx";
 import { useState } from "react";
 import { dataArr } from "./lib/data.jsx";
+import { ToDoItems } from "./components/ToDoItems.jsx";
 import { v4 as uuidv4 } from "uuid";
 export const App = () => {
   let [count, setCount] = useState(0);
 
   const [isMessageVisible, setIsMessageVisible] = useState(false);
+
+  const [items, setItems] = useState([]);
 
   const decrementHandleClick = () => {
     if (count != 0) {
@@ -37,7 +40,6 @@ export const App = () => {
         <WelcomeCard firstName="Jane" title="Lady" />
         <WelcomeCard firstName="Bob" />
         <Button
-          // count={count}
           incrementCount={() => setCount(count + 1)}
           decrementCount={decrementHandleClick}
         />
@@ -45,6 +47,7 @@ export const App = () => {
         {personElements}
         <ShowMessageButton messageClick={handleMessageClick} />
         {isMessageVisible ? <Message /> : null}
+        <ToDoItems setState={setItems} items={items} />
       </main>
     </>
   );
