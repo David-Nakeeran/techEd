@@ -24,6 +24,18 @@ export const Header = ({ username }) => {
           Contact
         </NavLink>
         <Link to={`/userprofile/${username}`}>My Profile</Link>
+        <NavLink
+          to={"form"}
+          className={({ isActive }) => (isActive ? "active-links" : "")}
+        >
+          Form
+        </NavLink>
+        <NavLink
+          to={"dryform"}
+          className={({ isActive }) => (isActive ? "active-links" : "")}
+        >
+          Dry Form
+        </NavLink>
       </nav>
     </>
   );
