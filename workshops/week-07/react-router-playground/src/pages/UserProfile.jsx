@@ -1,4 +1,5 @@
 import { Link, Outlet } from "react-router";
+import { UserOrders } from "../components/UserOrders";
 
 export const UserProfile = () => {
   return (
