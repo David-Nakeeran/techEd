@@ -1,5 +1,15 @@
 import Link from "next/link";
 
+export async function generateMetadata({ params, searchParams }, parent) {
+  const staffIdParams = await params.staffId;
+  // load the post
+  const res = await fetch(`https://dummyjson.com/users/${staffIdParams}`);
+  const data = await res.json();
+  return {
+    title: data.firstName,
+  };
+}
+
 export default async function StaffIdPage({ params }) {
   const staffIdParams = await params.staffId;
 
