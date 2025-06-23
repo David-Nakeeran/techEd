@@ -1,7 +1,20 @@
+import {
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
+
+import { auth, currentUser } from "@clerk/nextjs/server";
+
 import Link from "next/link";
 import headerStyles from "@/components/header.module.css";
 
-export default function Header() {
+export default async function Header() {
+  const { userId } = await auth();
+  const user = await currentUser();
+  console.log(user);
   return (
     <>
       <h1>This is a Header</h1>
@@ -22,6 +35,13 @@ export default function Header() {
           New Rollercoaster
         </Link>
       </nav>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
+      <SignedOut>
+        <SignInButton />
+        <SignUpButton />
+      </SignedOut>
     </>
   );
 }
