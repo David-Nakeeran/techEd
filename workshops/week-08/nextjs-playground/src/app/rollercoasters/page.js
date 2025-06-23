@@ -1,5 +1,5 @@
 import { db } from "@/utils/dbConnection";
-
+import Pop from "@/components/Pop";
 export default async function RollercoasterPage() {
   async function dataFetch() {
     try {
@@ -26,6 +26,7 @@ export default async function RollercoasterPage() {
         This is the rollercoatsers page
       </h1>
       {rollercoasterElements}
+      <Pop />
     </>
   );
 }

@@ -39,8 +39,8 @@ export default async function Header() {
         <UserButton />
       </SignedIn>
       <SignedOut>
-        <SignInButton />
-        <SignUpButton />
+        <SignInButton mode="modal" />
+        <SignUpButton mode="modal" />
       </SignedOut>
     </>
   );
