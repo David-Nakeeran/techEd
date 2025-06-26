@@ -1,10 +1,14 @@
 import Main from "@/components/Main";
 import Image from "next/image";
 import rollercoaster from "@/../public/images/rollercoaster.jpg";
+import TitleAnimation from "@/components/TitleAnimation";
+import Heading from "@/components/Heading";
 export default function HomePage() {
   return (
     <>
-      <h1>This is the Home Page</h1>
+      <TitleAnimation>
+        <Heading />
+      </TitleAnimation>
       <Image
         src={rollercoaster}
         alt="yellow rollercoaster in motion"

@@ -1,4 +1,5 @@
 import { db } from "@/utils/dbConnection";
+import { notFound } from "next/navigation";
 
 export default async function RollercosterIdPage({ params }) {
   const idParams = await params.rollercoasterId;
@@ -17,6 +18,10 @@ export default async function RollercosterIdPage({ params }) {
   }
 
   const rollercoasterData = (await dataFetch()) || [];
+
+  if (rollercoasterData.length === 0) {
+    notFound();
+  }
 
   const rollercoasterElements = rollercoasterData.map((elements) => {
     return (
